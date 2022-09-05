@@ -1,4 +1,8 @@
 <hello name="{{ name }}"></hello>
+
 <p>
-  Start editing to see some magic happen :)
+****Primer componente****
 </p>
+<app-person name = "Renuco" lastName="Rengel" [age]="24">  </app-person>
+<app-person name = "Camila" lastName="Duran" [age]="23" (print)="getPrint($event)"> </app-person>
+<app-person name = "Davito" lastName="Careaga" [age]="27"> </app-person>
