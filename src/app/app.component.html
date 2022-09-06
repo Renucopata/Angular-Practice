@@ -1,4 +1,45 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>AUTOS NUEVOS</p>
+
+<p>TOTAL BS : {{ totalBoliviansNewCars }}</p>
+
+<p>TOTAL $ : {{ totalDollarsNewCars }}</p>
+
+
+<div *ngFor="let car of newCars">
+
+    <app-car
+
+        [type]="car.type"
+        [color]="car.color"
+        [capacity]="car.capacity"
+        [createDate]="car.createDate"
+        [price]="car.price">
+
+
+
+    </app-car>
+
+</div>
+
+<p>AUTOS USADOS</p>
+
+<p>TOTAL BS : {{ totalBoliviansUsedCars }}</p>
+
+<p>TOTAL $ : {{ totalDollarsUsedCars }}</p>
+
+<div *ngFor="let car of usedCars">
+
+    <app-car
+
+            [type]="car.type"
+            [color]="car.color"
+            [capacity]="car.capacity"
+            [createDate]="car.createDate"
+            [price]="car.price">
+
+
+
+
+    </app-car>
+
+</div>

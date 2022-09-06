@@ -1,0 +1,13 @@
+<div>
+
+
+<p [hidden]="isHiddenText">NO DISPONIBLE</p>
+<br>Type : {{ type.toUpperCase() }}
+<br>Color {{ color}}
+<br>capacity {{capacity}}
+<br>Create Date : {{createDate| dateFormat}}
+<br>Price : {{price}}
+<br><button (click)="buyClick()" [disabled]="isEnableButtonBuy">Buy</button>
+
+
+</div>
