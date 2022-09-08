@@ -1,4 +1,12 @@
-<hello name="{{ name }}"></hello>
+
 <p>
-  Start editing to see some magic happen :)
+ Angular
 </p>
+<button (click)="showInfo1 = !showInfo1">Show Info</button>
+<app-person *ngIf="showInfo1" [name]="name" lastName='Duran' [age]=22></app-person>
+<button (click)="showInfo2 = !showInfo2">Show Info</button>
+<app-person *ngIf="showInfo2" name="Cynthia" lastName='Duran' [age]=32></app-person>
+<button (click)="showInfo3 = !showInfo3">Show Info</button>
+<app-person *ngIf="showInfo3" name="Dasyl" lastName='Duran' [age]=18></app-person>
+<button (click)="hide = !hide">Hide</button>
+<app-person [hidden]="hide" name="Hidden Person" lastName='Duran' [age]=18></app-person>
