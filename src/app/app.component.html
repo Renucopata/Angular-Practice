@@ -3,10 +3,44 @@
  Angular
 </p>
 <button (click)="showInfo1 = !showInfo1">Show Info</button>
-<app-person *ngIf="showInfo1" [name]="name" lastName='Duran' [age]=22></app-person>
+
+<app-person *ngIf="showInfo1 else elseVar" [name]="name" lastName='Duran' [age]=22></app-person>
+
 <button (click)="showInfo2 = !showInfo2">Show Info</button>
+
 <app-person *ngIf="showInfo2" name="Cynthia" lastName='Duran' [age]=32></app-person>
+
 <button (click)="showInfo3 = !showInfo3">Show Info</button>
-<app-person *ngIf="showInfo3" name="Dasyl" lastName='Duran' [age]=18></app-person>
+
+<app-person *ngIf="showInfo3" name="Dasyl" lastName='Duran' [age]=18><div>
+<p>Content for Dasyyyyl</p>
+<p>ng content1</p>
+<p>ng content2</p>
+<button>ng content button</button>
+</div></app-person>
+
 <button (click)="hide = !hide">Hide</button>
+
 <app-person [hidden]="hide" name="Hidden Person" lastName='Duran' [age]=18></app-person>
+
+
+<div *ngFor="let item of ['a','b','c','d','e']; let i = index;">
+  <p>Item: {{name}} - index: {{i}}</p>
+</div>
+
+<div [ngSwitch]="number">
+<p *ngSwitchCase="1">El numero es: {{number}}</p>
+<p *ngSwitchCase="2">El numero es: {{number}}</p>
+<p *ngSwitchCase="3">El numero es: {{number}}</p>
+<p *ngSwitchDefault>opcion por defecto</p>
+</div>
+
+<div *ngFor="let item of ['a', 'b', 'c']; let i = index;">
+<app-person name="Renucopata"></app-person>
+</div>
+<ng-template #elseVar>
+  <p>Click show Info above to see the info</p>
+</ng-template>
+
+
+

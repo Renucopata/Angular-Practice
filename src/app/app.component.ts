@@ -12,5 +12,6 @@ public showInfo1: boolean = false;
 public showInfo2: boolean = false;
 public showInfo3: boolean = false;
 public hide: boolean = false;
+public number: number = 3;
  
 }
