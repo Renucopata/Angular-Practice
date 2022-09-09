@@ -5,10 +5,10 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 })
 export class IfDirective {
 
-  @Input() value: boolean = true;
+  @Input() appIf: boolean = true;
 
   constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) {
-      if(this.value) {
+      if(this.appIf) {
         this.viewContainerRef.createEmbeddedView(templateRef);
       } else {
         this.viewContainerRef.clear();
