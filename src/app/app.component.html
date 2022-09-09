@@ -1,4 +1,14 @@
-<hello name="{{ name }}"></hello>
+
 <p>
-  Start editing to see some magic happen :)
+ViewChild
 </p>
+
+<div #div1>My div</div>
+ <input #input1 type="text">
+
+ <p>{{div1}}</p>
+ <p>{{input1}}</p>
+
+ <button (click)="onShowVars()">Show html vars on console</button>
+
+ <app-person #myPerson name="Renuco" [age]="23"></app-person>
