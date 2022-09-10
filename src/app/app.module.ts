@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { ConcertComponent } from './concert/concert.component';
+import { EnablePipe } from './enable.pipe';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, ConcertComponent, EnablePipe],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

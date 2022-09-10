@@ -1,0 +1,17 @@
+<div *ngIf="stock === 0; else color" style="background: red">
+
+<p>Nombre: {{name | uppercase}}</p>
+  <p>Stock: {{stock}}</p>
+  <p>Habilitado: {{enable | enable}}</p>
+  <button (click)="onComprar()">COMPRAR</button>
+</div>
+
+<ng-template #color>
+<div style="background: orange">
+
+<p>Nombre: {{name | uppercase}}</p>
+  <p>Stock: {{stock}}</p>
+  <p>Habilitado: {{enable | enable}}</p>
+  <button (click)="onComprar()">COMPRAR</button>
+</div>
+</ng-template>

@@ -1,4 +1,31 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+<p style="border: 3px solid">6-Super Ticket</p>
+
+<p>TOTAL STOCK: {{totalStock}}</p>
+
+<p *ngIf="totalStock === 0">TODO VENDIDO</p>
+
+
+<p style="background: green">INTERNACIONAL</p>
+<div style="display: flex; flex-direction: row;">
+<ng-container *ngFor="let concert of nacionalConcertList">
+  <app-concert
+    [name]="concert.name"
+    [stock]="concert.stock"
+    [enable]="concert.enable"
+  >
+  </app-concert>
+</ng-container>
+</div>
+
+<p style="background: blue">INTERNACIONAL</p>
+<div style="display: flex; flex-direction: row;">
+<ng-container *ngFor="let concert of interNacionalConcertList">
+  <app-concert
+    [name]="concert.name"
+    [stock]="concert.stock"
+    [enable]="concert.enable"
+  >
+  </app-concert>
+</ng-container>
+</div>
