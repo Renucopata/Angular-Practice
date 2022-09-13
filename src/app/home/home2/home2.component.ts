@@ -17,7 +17,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class Home2Component implements OnInit {
 
   arg1 = 0;
-  arg2 = "El ex de mi novia";
+  arg2 = "Camilaaa";
 
   constructor() { }
 
