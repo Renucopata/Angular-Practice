@@ -15,6 +15,10 @@ export class AdminComponent implements OnInit {
     this.router.params.subscribe((p) => console.log("Params:" , p));
 
     console.log('Snapshot: ', this.router.snapshot.params);
+
+    this.router.queryParams.subscribe((p) => console.log("Query Params:" , p));
+
+    console.log('Snapshot Query params: ', this.router.snapshot.queryParams);
   }
 
 }
