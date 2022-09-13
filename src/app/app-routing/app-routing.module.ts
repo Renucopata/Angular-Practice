@@ -6,7 +6,7 @@ import { Home1Component } from '../home/home1/home1.component';
 import { Home2Component } from '../home/home2/home2.component';
 import { UserComponent } from '../user/user.component';
 
-const routes: Routes = [ 
+const routes: Routes = [ //Navigation per modules
   {path: 'home', component: HomeComponent, 
 children: [
   {path: 'home1', component: Home1Component},
