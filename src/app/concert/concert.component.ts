@@ -12,7 +12,7 @@ export class ConcertComponent implements OnInit {
   @Input() enable!: boolean;
   @Input() type!: string;
 
-  
+
 
   @Output() buy = new EventEmitter();
 
@@ -22,7 +22,12 @@ export class ConcertComponent implements OnInit {
   }
 
   public onComprar() {
-    this.stock --;
+    if(this.stock != 0) {
+      this.stock--;
+      this.buy.emit(1);
+    }
+    
+    
   }
 
 }

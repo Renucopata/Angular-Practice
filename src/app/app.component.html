@@ -1,9 +1,9 @@
 
 <p style="border: 3px solid">6-Super Ticket</p>
 
-<p>TOTAL STOCK: {{totalStock}}</p>
+<p #stock >TOTAL STOCK: {{totalStock}}</p>
 
-<p *ngIf="totalStock === 0">TODO VENDIDO</p>
+<p *ngIf="totalStock === 0" style="border: 3px solid; background: red">TODO VENDIDO</p>
 
 
 <p style="background: green">NACIONAL</p>
@@ -13,6 +13,7 @@
     [name]="concert.name"
     [stock]="concert.stock"
     [enable]="concert.enable"
+    (buy)="upDateStock($event)"
   >
   </app-concert>
 </ng-container>
@@ -25,6 +26,7 @@
     [name]="concert.name"
     [stock]="concert.stock"
     [enable]="concert.enable"
+    (buy)="upDateStock($event)"
   >
   </app-concert>
 </ng-container>

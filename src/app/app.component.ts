@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, VERSION } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { data } from './data';
 
 @Component({
@@ -9,7 +9,8 @@ import { data } from './data';
 export class AppComponent implements OnInit {
   nacionalConcertList: any[] = [];
   interNacionalConcertList: any[] = [];
-  @Input() totalStock: number = 30; 
+  @Input() totalStock: number = 0; 
+
 
   ngOnInit() {
     Object.entries(data.data)
@@ -19,7 +20,15 @@ export class AppComponent implements OnInit {
     Object.entries(data.data)
       .filter((c: any) => c[1].type === 'internacional')
       .forEach((c) => this.interNacionalConcertList.push({ id: c[0], ...c[1] }));
-
     
+    Object.entries(data.data).forEach((c: any) => {
+      this.totalStock = this.totalStock + c[1].stock
+    }
+    )
+  
+  }
+
+  public upDateStock(event: number) {
+        this.totalStock = this.totalStock - event;
   }
 }
