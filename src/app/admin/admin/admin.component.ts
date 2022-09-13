@@ -12,7 +12,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.router.params.subscribe((p) => console.log("Params:" + p))
+    this.router.params.subscribe((p) => console.log("Params:" , p))
   }
 
 }

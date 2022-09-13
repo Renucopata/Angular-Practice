@@ -24,6 +24,6 @@ export class AppComponent {
   }
 
   goToAdmin() {
-    this.router.navigate(['/admin', this.id]);
+    this.router.navigate(['/admin', this.id, 'textoFijo', 23]);
   }
 }
