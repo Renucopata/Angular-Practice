@@ -1,4 +1,15 @@
-<hello name="{{ name }}"></hello>
+
 <p>
-  Start editing to see some magic happen :)
+ PURE - IMPURE FUNCTIONS
 </p>
+
+<p>Impure pipe</p>
+<p>{{numbers | impure}}</p>
+
+<p>Pure pipe</p>
+<p>{{numbers | pure}}</p>
+
+
+
+
+<button (click)="numbers.push(8)">Push numbers</button>
