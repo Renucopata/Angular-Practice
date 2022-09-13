@@ -24,4 +24,8 @@ export class AppComponent  {
     this.router.navigate(['/home'])
   }
 
+  goToAdmin() {
+    this.router.navigate(['/admin'])
+  }
+
 }
