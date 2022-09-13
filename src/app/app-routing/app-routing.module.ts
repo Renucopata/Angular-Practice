@@ -9,7 +9,7 @@ import { UserComponent } from '../user/user.component';
 const routes: Routes = [ //Navigation per modules
   {path: 'home', component: HomeComponent, 
 children: [
-  {path: 'home1', component: Home1Component},
+  {path: 'home1', component: Home1Component}, //Sub navigation per modules
   {path: 'home2', component: Home2Component}
 ]},
   {path: 'user', component: UserComponent},
