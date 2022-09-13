@@ -1,4 +1,18 @@
-<hello name="{{ name }}"></hello>
+<router-outlet></router-outlet>
 <p>
-  Start editing to see some magic happen :)
+Routing and navigation
 </p>
+<router-outlet></router-outlet>
+
+
+<button [routerLink]="'/user'">Go to user view</button>
+<button [routerLink]="'/home'">Go to Home view</button>
+<button [routerLink]="'/'">Go to root view</button>
+
+<p>
+Navigation from TS
+</p>
+
+<button (click)="goToUser()">Go to user from ts</button>
+<button (click)="goToHome()">Go to home from ts</button>
+<button (click)="goToRoot()">Go to root from ts</button>
