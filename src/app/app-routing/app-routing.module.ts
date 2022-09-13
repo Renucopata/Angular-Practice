@@ -13,7 +13,7 @@ children: [
   {path: 'home2', component: Home2Component}
 ]},
   {path: 'user', component: UserComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin/:id', component: AdminComponent}
 ]
 
 @NgModule({

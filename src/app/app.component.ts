@@ -4,28 +4,26 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
+export class AppComponent {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) {
-
-  }
+  id: number = 3;
 
   public goToRoot() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
   }
 
   public goToUser() {
-    this.router.navigate(['/user'])
+    this.router.navigate(['/user']);
   }
 
   public goToHome() {
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home']);
   }
 
   goToAdmin() {
-    this.router.navigate(['/admin'])
+    this.router.navigate(['/admin', this.id]);
   }
-
 }
