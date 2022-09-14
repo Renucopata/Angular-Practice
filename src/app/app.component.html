@@ -1,4 +1,20 @@
-<hello name="{{ name }}"></hello>
+
 <p>
-  Start editing to see some magic happen :)
+Forms
 </p>
+
+<form #testForm="ngForm" (ngSubmit)="onSubmit(testForm)">
+LAST NAME: <input type="text" name="lastName" ngModel>
+AGE: <input type="text" name="age" ngModel>
+COUNTRY: <input type="text" name="country" ngModel>
+<button type="submit">enviar</button>
+</form>
+
+<p>--------------------------------------------</p>
+
+<form #testForm2="ngForm">
+LAST NAME: <input type="text" name="lastName" ngModel>
+AGE: <input type="text" name="age" ngModel>
+COUNTRY: <input type="text" name="country" ngModel>
+<button (click)="onSubmit(testForm2)">enviar</button>
+</form>
