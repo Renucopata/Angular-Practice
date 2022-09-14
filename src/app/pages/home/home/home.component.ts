@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   title = 'test';
 
   constructor(private carService: CarService,
-    private authService: AuthService) {
+    private authService: AuthService, private store: Store) {
 }
   ngOnInit() {
     this.carService.getAllCars().subscribe(res => {
@@ -21,6 +21,13 @@ export class HomeComponent implements OnInit {
 
   public onLogout(): void {
     this.authService.logout();
+  }
+  onOpenSidePanel() {
+    this.store.dispatch(openSidePanel())
+  }
+
+  onCloseSidePanel() {
+    this.store.dispatch(closeSidePanel())
   }
 
 
