@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ObservableService } from '../observable.service';
 import { SingletonTestService } from '../singleton-test.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { SingletonTestService } from '../singleton-test.service';
 })
 export class PersonComponent implements OnInit {
 
-  constructor(private singletonService: SingletonTestService) { }
+
+  constructor(private singletonService: SingletonTestService, private observServ: ObservableService) {
+
+    this.observServ.currentData().subscribe(s => console.log(s))
+   }
 
   ngOnInit() {
   }
@@ -16,6 +21,7 @@ export class PersonComponent implements OnInit {
   onClick() {
     console.log('Singleton Test:', this.singletonService);
     this.singletonService.setToken('Renucopata');
+
   }
 
 }
