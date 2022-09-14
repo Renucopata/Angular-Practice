@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { closeSidePanel, openSidePanel } from '../../../redux/home.actions';
 import { AuthService } from '../../services/auth.service';
 import { CarService } from '../../services/car.service';
 
@@ -9,6 +10,9 @@ import { CarService } from '../../services/car.service';
 })
 export class HomeComponent implements OnInit {
   title = 'test';
+  openPanel: boolean = false;
+
+  showFiller = false;
 
   constructor(private carService: CarService,
     private authService: AuthService, private store: Store) {
@@ -16,6 +20,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.carService.getAllCars().subscribe(res => {
       console.log('RESPONSE CARS: ', res)
+    })
+    this.store.select((s: any) => s.home).subscribe(s => {
+      console.log('STORE: ', s)
+      this.openPanel = s.sidePanel;
+      console.log('RESPONSE CARS: ', s, this.openPanel)
     })
   }
 
