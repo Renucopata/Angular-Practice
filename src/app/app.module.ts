@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 const routes: Routes = [
   {
@@ -24,7 +25,15 @@ const routes: Routes = [
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule],
   declarations: [ AppComponent ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap:    [ AppComponent ]
+
   
 })
 export class AppModule { }

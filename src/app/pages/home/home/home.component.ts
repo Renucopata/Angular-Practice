@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarService } from '../../services/car.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title = 'test';
 
-  constructor() { }
+  constructor(private carService: CarService) {
+  }
 
   ngOnInit() {
+    this.carService.getAllCars().subscribe(res => {
+      console.log('RESPONSE CARS: ', res)
+    })
   }
+
 
 }
