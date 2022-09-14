@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { CarService } from '../../services/car.service';
 
 @Component({
@@ -9,14 +10,19 @@ import { CarService } from '../../services/car.service';
 export class HomeComponent implements OnInit {
   title = 'test';
 
-  constructor(private carService: CarService) {
-  }
-
+  constructor(private carService: CarService,
+    private authService: AuthService) {
+}
   ngOnInit() {
     this.carService.getAllCars().subscribe(res => {
       console.log('RESPONSE CARS: ', res)
     })
   }
+
+  public onLogout(): void {
+    this.authService.logout();
+  }
+
 
 
 }
