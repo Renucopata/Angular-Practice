@@ -26,8 +26,8 @@ constructor() {
 
 }
 
-pureSum = (a, b) => {return a + b}
-impureSum2(a:number, b:number){
+pureSum = (a, b) => {return a + b} //pure
+impureSum2(a:number, b:number){ // impure
   return (a + b + Math.random()).toFixed()
 }
 
