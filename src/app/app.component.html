@@ -1,4 +1,26 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+<p>VALIDATIONS</p>
+
+<form #form="ngForm">
+  <p>NAME</p>
+  <input type="text"
+         name="name"
+         ngModel
+         #nameL="ngModel"
+         minlength="4"
+         required>
+  <div *ngIf="nameL.invalid && (nameL.touched || nameL.dirty)">
+    <span *ngIf="nameL.errors['required']">
+      Name is required.
+    </span>
+    <span *ngIf="nameL.errors['minlength']">
+      Minlength 4 characters.
+    </span>
+  </div>
+
+  <p>LAST NAME</p>
+  <input type="text" name="lastName" ngModel>
+  <p>Country</p>
+  <input type="text" name="country" ngModel>
+  <button>Submit</button>
+</form>
