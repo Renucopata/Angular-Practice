@@ -7,10 +7,11 @@ import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AdminModule } from './admin/admin.module';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule, AdminModule],
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule, AdminModule, StoreModule.forRoot({}, {})],
   declarations: [ AppComponent, UserComponent, HomeComponent ],
   bootstrap:    [ AppComponent ]
 })
