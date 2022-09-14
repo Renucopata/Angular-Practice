@@ -7,10 +7,13 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit{
 
   constructor(private authService: AuthService,  private router: Router) {
   }
+ngOnInit(): void {
+
+}
 
   onLogin() {
     this.authService.login({
