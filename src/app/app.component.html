@@ -2,7 +2,7 @@
 <p>
 Routing and navigation
 </p>
-<router-outlet></router-outlet> basic navigation
+<router-outlet></router-outlet> //basic navigation router link
 
 
 <button [routerLink]="'/user'">Go to user view</button>
@@ -11,7 +11,7 @@ Routing and navigation
 <button [routerLink]="'/admin/123/textoFijo/56'" [queryParams]="{name: 'Renuco', lastName: 'Copata'}">Go to admin view</button>
 
 <p>
-Navigation from TS
+Navigation from TS  
 </p>
 
 <button (click)="goToUser()">Go to user from ts</button>
