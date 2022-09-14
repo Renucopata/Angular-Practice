@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AuthComponent {
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,  private router: Router) {
   }
 
   onLogin() {
@@ -18,6 +19,17 @@ export class AuthComponent {
       returnSecureToken: true
     }).subscribe(res => {
       console.log('RESPONSE: ', res)
+      this.router.navigate(['home'])
+    })
+  }
+
+  onCreate() {
+    this.authService.createUser({
+      email: 'test2@test.com',
+      password: '123456',
+      returnSecureToken: true
+    }).subscribe(res => {
+      console.log('CREATE USER: ', res)
     })
   }
 
