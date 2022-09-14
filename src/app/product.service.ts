@@ -13,22 +13,22 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  public getAllProducts(): Observable<any> {
+  public getAllProducts(): Observable<any> { //get
     return this.http.get(
       `${this.url}/products.json`).pipe(
       map(s => Object.entries(s)),
       map(s => s.map(s => ({id: s[0], ...s[1]}))))
   }
 
-  public createProduct(body: any): Observable<any> {
+  public createProduct(body: any): Observable<any> { //post
     return this.http.post(`${this.url}/products.json`, body)
   }
 
-  public deleteProduct(id: any): Observable<any> {
+  public deleteProduct(id: any): Observable<any> { //delete
     return this.http.delete(`${this.url}/products/${id}.json`)
   }
 
-  public updateProduct(id: any, body: any): Observable<any> {
+  public updateProduct(id: any, body: any): Observable<any> { //put
     return this.http.put(`${this.url}/products/${id}.json`, body)
   }
 
